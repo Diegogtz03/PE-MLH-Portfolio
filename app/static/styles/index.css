@@ -1,0 +1,117 @@
+@import url(https://fonts.googleapis.com/css?family=VT323);
+
+body {
+  margin: 0;
+  overflow: hidden;
+  opacity: 1;
+
+  background-color: black;
+
+  transition: opacity 3s;
+}
+
+.wrapper {
+  background-color: #383838;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 0 18rem #031e11;
+}
+
+.monitor-lines {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  top: 0;
+  left: 0;
+  background-color: #14fdce15;
+  background-image: repeating-linear-gradient(transparent, rgba(0, 0, 0, 0.265) 0.5em);
+  backdrop-filter: blur(0.3px);
+  box-shadow: 5px 5px 25px #14fdce20;
+  animation: monitor-blink 2s ease infinite;
+  animation-direction: alternate;
+}
+
+.monitor-screen {
+  position: relative;
+  background-color: #031e11;
+  border-radius: 2rem;
+  padding: 40px;
+  height: 85%;
+  width: 90%;
+  box-shadow:
+    inset 0 0 18rem black,
+    inset 0 0 3rem black,
+    0 0 10rem black;
+}
+
+.monitor-text {
+  font-family: 'VT323';
+  font-size: 1.6rem;
+  color: #14fdce;
+}
+
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+p::after {
+  content: '';
+  animation: blinking-cursor 1s linear infinite;
+  transition: all 0.5s ease;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.blinking-dot::after {
+  content: '';
+  animation: blinking-dot 1s linear infinite;
+}
+
+@media screen and (max-width: 435px) {
+  .monitor-screen {
+    width: 69%;
+  }
+
+  .monitor-text {
+    font-size: 1rem;
+  }
+  
+}
+
+@keyframes monitor-blink {
+  0% {
+    opacity: 1;
+  } 50% {
+    opacity: 0.5;
+  } 100% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes blinking-dot {
+  0% {
+    content: '.';
+  } 50% {
+    content: '..';
+  } 100% {
+    content: '...';
+  }
+}
+
+@keyframes blinking-cursor {
+  0% {
+    content: '|';
+  } 100% {
+    content: '';
+  }
+}
