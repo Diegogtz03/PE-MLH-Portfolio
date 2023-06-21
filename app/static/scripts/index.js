@@ -50,6 +50,6 @@ function transitionOut() {
 
   // redirect the user to the next page
   setTimeout(() => {
-    window.location.href = '/definePath';
+    window.location.href = '/welcome';
   }, 3000);
 }
