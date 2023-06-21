@@ -5,7 +5,7 @@ body {
   overflow: hidden;
   opacity: 1;
 
-  background-color: black;
+  background-color: #161616;
 
   transition: opacity 3s;
 }
