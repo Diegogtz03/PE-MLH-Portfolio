@@ -84,6 +84,11 @@ body {
   margin-right: 1.5rem;
 }
 
+.tech-stack-list img {
+  width: 45px;
+  margin-right: 1.5rem;
+}
+
 .hobbies-container {
   max-width: 1200px;
   display: flex;
