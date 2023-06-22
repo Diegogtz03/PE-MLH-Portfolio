@@ -46,10 +46,14 @@ window.onload = () => {
 
 function transitionOut() {
   // transition the whole page out
-  $('body').css('opacity', 0);
+  $('.wrapper').css('opacity', 0);
+
+  setTimeout(() => {
+    $('.noise-wrapper').css('opacity', 0.05);
+  }, 3000);
 
   // redirect the user to the next page
   setTimeout(() => {
-    window.location.href = '/definePath';
-  }, 3000);
+    window.location.href = '/welcome';
+  }, 4500);
 }

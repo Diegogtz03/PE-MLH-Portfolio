@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200;300;400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Gemunu Libre', sans-serif;
+  color: white;
+  background-color: #161616;
+  overflow: hidden;
+  margin: 0;
+}
+
+.wrapper {
+  opacity: 0;
+  height: 100vh;
+  transition: 3s opacity;
+  transition-delay: 1s;
+}
+
+.noise-wrapper {
+  position: absolute;
+  background-image: url('../img/noise.png');
+  opacity: 0.05;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+
+.main-information-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.welcome-text {
+  position: absolute;
+  top: 8rem;
+  line-height: 0.9;
+}
+
+#welcome-span {
+  font-size : clamp(5rem, 15vw, 12rem);
+}
+
+#name-span,
+#subtitle-span {
+  font-size : clamp(4rem, 15vw, 8rem);
+  color: rgb(0 0 0 / 48%);
+}
+
+.glowing-orbs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: -2;
+}
+
+.orb {
+  position: absolute;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  filter: blur(80px);
+  transform: translateZ(0);
+  bottom: 0;
+}
+
+.blue-orb {
+  right: 30px;
+  background-color: #373F85;
+  animation: 3s linear .1s alternate blue-orb-movement;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.purple-orb {
+  left: 30px;
+  background-color: #604192;
+  animation: 3s linear .1s alternate purple-orb-movement;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+.contact-button-wrapper {
+  position: absolute;
+  bottom: 0;
+  margin: 2rem;
+}
+
+.contact-button {
+  background-color: transparent;
+  border: 4px solid rgba(255, 255, 255, 0.708);
+  border-radius: 3rem;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.708);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.contact-button:hover {
+  background-color: rgba(255, 255, 255, 0.556);
+  animation: 1s linear .1s alternate button-glow;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.contact-button:active {
+  box-shadow: 0 0 0px white;
+  scale: 0.98;
+}
+
+.prevent-select {
+  user-select: none;
+}
+
+@keyframes blue-orb-movement {
+  0% {
+    bottom: 3rem;
+    right: 3rem;
+    left: 8rem;
+  } 25% {
+    bottom: 4rem;
+    right: 4rem;
+    left: 11rem;
+  } 50% {
+    bottom: 3rem;
+    right: 5rem;
+    left: 14rem;
+  } 75% {
+    bottom: 2rem;
+    right: 6rem;
+    left: 16rem;
+  } 100% {
+    bottom: 0rem;
+    right: 7rem;
+    left: 18rem;
+  }
+}
+
+@keyframes purple-orb-movement {
+  0% {
+    bottom: 3rem;
+    right: 8rem;
+  } 25% {
+    bottom: 4rem;
+    right: 11rem;
+  } 50% {
+    bottom: 3rem;
+    right: 15rem;
+  } 75% {
+    bottom: 2rem;
+    right: 16rem;
+  } 100% {
+    bottom: 0rem;
+    right: 18rem;
+  }
+}
+
+@keyframes button-glow {
+  from {
+    box-shadow: 0 0 0px white;
+  } to {
+    box-shadow: 0 0 15px white;
+  }
+}
+
+@media (max-width: 500px) {
+  .orb {
+    width: 13rem;
+    height: 13rem;
+  }
+}

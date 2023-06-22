@@ -1,22 +1,33 @@
 @import url(https://fonts.googleapis.com/css?family=VT323);
 
+
+.noise-wrapper {
+  opacity: 0;
+  position: absolute;
+  background-image: url('../img/noise.png');
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+
+  transition: opacity 2s;
+}
+
 body {
   margin: 0;
   overflow: hidden;
-  opacity: 1;
-
-  background-color: black;
-
-  transition: opacity 3s;
+  background-color: #161616;
 }
 
 .wrapper {
+  opacity: 1;
   background-color: #383838;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 5px 0 18rem #031e11;
+
+  transition: opacity 3s;
 }
 
 .monitor-lines {
