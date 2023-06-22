@@ -6,11 +6,35 @@
     <meta property="og:title" content="Personal Portfolio">
     <meta property="og:description" content="My Personal Portfolio">
     <link type="text/css" rel="stylesheet" href="../static/styles/welcome.css">
+    <script src="../static/scripts/welcome.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <title>Welcome</title>
   </head>
   <body>
+    <div class="noise-wrapper"></div>
     <div class="wrapper">
-      It WORKS
+      <div class="action-menu-wrapper">
+        <!-- MENU GOES HERE -->
+      </div>
+
+      <div class="main-information-wrapper">
+        <div class="welcome-text">
+          <span class="prevent-select" id="welcome-span">Welcome</span><br>
+          <span class="prevent-select" id="name-span">Diego's</span><br>
+          <span class="prevent-select" id="subtitle-span">Journey</span><br>
+
+          <div class="glowing-orbs">
+            <div class="orb blue-orb"></div>
+            <div class="orb purple-orb"></div>
+          </div>
+
+        </div>
+        <div class="contact-button-wrapper">
+          <button class="contact-button" >
+            Contact me
+          </button>
+        </div>
+      </div>
     </div>
   </body>
 </html>
