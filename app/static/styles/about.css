@@ -14,6 +14,53 @@ body {
   align-items: center;
 }
 
+.glowing-orbs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: -2;
+}
+
+.orb {
+  position: absolute;
+  width: 70%;
+  height: 18rem;
+  border-radius: 50%;
+  filter: blur(80px);
+  transform: translateZ(0);
+  top: -10rem;
+}
+
+.blue-orb {
+  right: 30px;
+  background-color: #373F85;
+  animation: 3s linear .1s alternate blue-orb-movement;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.purple-orb {
+  left: 30px;
+  background-color: #604192;
+  animation: 3s linear .1s alternate purple-orb-movement;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+}
+
+.noise-wrapper {
+  position: fixed;
+  background-image: url('../img/noise.png');
+  opacity: 0.05;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  z-index: -1;
+}
+
 .about-container {
   max-width: 1200px;
   display: flex;
@@ -143,6 +190,44 @@ body {
   margin: 0;
 }
 
+
+.glowing-orbs-b {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -100%;
+  margin: auto;
+  z-index: -2;
+}
+
+.orb-b {
+  position: absolute;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  filter: blur(80px);
+  transform: translateZ(0);
+  bottom: 0;
+}
+
+.blue-orb-b {
+  right: 0;
+  background-color: #373F85;
+  animation: 3s linear .1s alternate blue-orb-movement;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.purple-orb-b {
+  left: 50%;
+  background-color: #604192;
+  animation: 3s linear .1s alternate purple-orb-movement;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+}
+
 @media screen and (max-width: 1250px) {
 
   .about-container {
@@ -224,4 +309,75 @@ body {
   }
 
 
+}
+
+@keyframes blue-orb-movement {
+  0% {
+    bottom: 3rem;
+  } 25% {
+    bottom: 4rem;
+  } 50% {
+    bottom: 3rem;
+  } 75% {
+    bottom: 2rem;
+  } 100% {
+    bottom: 0rem;
+  }
+}
+
+@keyframes purple-orb-movement {
+  0% {
+    bottom: 3rem;
+  } 25% {
+    bottom: 4rem;
+  } 50% {
+    bottom: 3rem;
+  } 75% {
+    bottom: 2rem;
+  } 100% {
+    bottom: 0rem;
+  }
+}
+
+@keyframes blue-orb-movement-b {
+  0% {
+    bottom: 3rem;
+    right: 3rem;
+    left: 8rem;
+  } 25% {
+    bottom: 4rem;
+    right: 4rem;
+    left: 11rem;
+  } 50% {
+    bottom: 3rem;
+    right: 5rem;
+    left: 14rem;
+  } 75% {
+    bottom: 2rem;
+    right: 6rem;
+    left: 16rem;
+  } 100% {
+    bottom: 0rem;
+    right: 7rem;
+    left: 18rem;
+  }
+}
+
+@keyframes purple-orb-movement-b {
+  0% {
+    bottom: 3rem;
+    right: 8rem;
+  } 25% {
+    bottom: 4rem;
+    right: 11rem;
+  } 50% {
+    bottom: 3rem;
+    right: 15rem;
+  } 75% {
+    bottom: 2rem;
+    right: 16rem;
+  } 100% {
+    bottom: 0rem;
+    right: 18rem;
+  }
 }
