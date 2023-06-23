@@ -25,3 +25,11 @@ def travel():
 @app.route('/projects')
 def projects():
     return render_template('projects.html')
+
+@app.route('/experience')
+def experience():
+    return render_template('experience.html')
+
+@app.route('/hobbies')
+def hobbies():
+    return render_template('hobbies.html')

@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200;300;400;500;600;700;800&display=swap');
+
+body {
+  background-color: #161616;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.glowing-orbs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: -2;
+}
+
+.orb {
+  position: absolute;
+  width: 70%;
+  height: 18rem;
+  border-radius: 50%;
+  filter: blur(80px);
+  transform: translateZ(0);
+  top: -10rem;
+}
+
+.blue-orb {
+  right: 30px;
+  background-color: #373F85;
+  animation: 3s linear .1s alternate blue-orb-movement;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.purple-orb {
+  left: 30px;
+  background-color: #604192;
+  animation: 3s linear .1s alternate purple-orb-movement;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+}
+
+.noise-wrapper {
+  position: fixed;
+  background-image: url('../img/noise.png');
+  opacity: 0.05;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  z-index: -1;
+}
+
+.hobbies-container {
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+}
+
+.hobbies-container h1 {
+  font-family: 'Gemunu Libre', sans-serif;
+  font-size: 6rem;
+  font-weight: 300;
+  color: #fff;
+  text-align: start;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.images-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.images-container ul:first-child {
+  margin-top: 6rem;
+}
+
+.images-container ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.images-container li {
+  margin: 3rem 2rem;
+}
+
+.images-container img {
+  max-width: 400px;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.images-container h4 {
+  font-family: 'Gemunu Libre', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: #fff;
+  text-align: start;
+  padding: 0 1rem;
+  margin: 0;
+}
+
+@media screen and (max-width: 980px) {
+  .images-container img {
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 820px) {
+
+  .hobbies-container h1 {
+    font-size: 4rem;
+    padding: 2rem 4rem;
+    margin-bottom: -4rem;
+  }
+
+  .images-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .images-container ul:first-child ul {
+    margin-top: 0;
+  }
+
+  .images-container img {
+    max-width: 400px;
+  }
+}
+
+@keyframes blue-orb-movement {
+  0% {
+    bottom: 3rem;
+  } 25% {
+    bottom: 4rem;
+  } 50% {
+    bottom: 3rem;
+  } 75% {
+    bottom: 2rem;
+  } 100% {
+    bottom: 0rem;
+  }
+}
+
+@keyframes purple-orb-movement {
+  0% {
+    bottom: 3rem;
+  } 25% {
+    bottom: 4rem;
+  } 50% {
+    bottom: 3rem;
+  } 75% {
+    bottom: 2rem;
+  } 100% {
+    bottom: 0rem;
+  }
+}
