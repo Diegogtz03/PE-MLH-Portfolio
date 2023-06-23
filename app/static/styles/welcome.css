@@ -11,8 +11,9 @@ body {
 .wrapper {
   opacity: 0;
   height: 100vh;
-  transition: 3s opacity;
-  transition-delay: 1s;
+  overflow: hidden;
+  transition: 2s opacity;
+  transition-delay: 0.3s;
 }
 
 .noise-wrapper {
@@ -189,6 +190,4 @@ h1, h2, h3, h4, p {
     width: 13rem;
     height: 13rem;
   }
-
-
 }
