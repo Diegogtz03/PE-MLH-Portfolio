@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200;300;400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Gemunu Libre', sans-serif;
+  background-color: #161616;
+  overflow: hidden;
+  margin: 0;
+}
+
+.noise-wrapper {
+  position: absolute;
+  background-image: url('../img/noise.png');
+  opacity: 0.05;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+
+#title {
+  color: white;
+  text-align: center;
+  font-size: 6rem;
+  margin: 0;
+  width: fit-content;
+  position: fixed;
+  top: 3rem;
+  right: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.map-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 70%;
+  height: 60%;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.mapboxgl-popup-content {
+  font-family: 'Gemunu Libre', sans-serif;
+  color:rgb(125, 125, 125);
+}
+
+.glowing-orbs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: -2;
+}
+
+.orb {
+  position: absolute;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  filter: blur(80px);
+  transform: translateZ(0);
+  bottom: 0;
+  offset-distance: 0%;
+  offset-path: path('M 0,0 L 1043, 0 L 1043,612 L 0,612 Z');
+  animation: 20s linear .1s orb-path;
+  animation-iteration-count: infinite;
+  top: 0;
+  left: 0;
+}
+
+.blue-orb {
+  offset-distance: -30%;
+  background-color: #373F85;
+  animation-direction: reverse;
+  animation-play-state: paused;
+}
+
+.blue-orb.top-orb {
+  offset-distance: 30%;
+  animation-direction: normal !important;
+  animation-play-state: paused;
+}
+
+.purple-orb {
+  background-color: #604192;
+  animation-play-state: paused;
+}
+
+.purple-orb.top-orb {
+  offset-distance: 0%;
+  animation-direction: reverse;
+  animation-play-state: running;
+}
+
+.top-orb {
+  top: -15px;
+}
+
+@media (max-width: 768px) {
+  #title {
+    font-size: 4rem;
+    top: 5rem;
+  }
+
+  .map-wrapper {
+    position: fixed;
+    top: unset;
+    bottom: 3rem;
+    width: 80%;
+    height: 65%;
+  }
+
+  .orb {
+    width: 13rem;
+    height: 13rem;
+    filter: blur(50px);
+  }
+  
+}
+
+@keyframes orb-path {
+  from {
+    offset-distance: 0%;
+  } to {
+    offset-distance: 100%;
+  }
+}

@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta property="og:title" content="Personal Portfolio">
     <meta property="og:description" content="My Personal Portfolio">
-    <link type="text/css" rel="stylesheet" href="../static/styles/welcome.css">
+    <link type="text/css" rel="stylesheet" href="../static/styles/travel.css">
     <link type="text/css" rel="stylesheet" href="../static/styles/menu.css">
-    <script src="../static/scripts/welcome.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <title>Welcome</title>
+    <link href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css" rel="stylesheet" />
+    <script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
+    <script src="../static/scripts/travel.js"></script>
+    <script src="../static/scripts/mapkick.js"></script>
+    <title>Travel</title>
   </head>
   <body>
     <div class="noise-wrapper"></div>
@@ -38,24 +41,22 @@
         </a>
       </div>
 
-      <div class="main-information-wrapper">
-        <div class="welcome-text">
-          <span class="prevent-select" id="welcome-span">Welcome</span><br>
-          <span class="prevent-select" id="name-span">Diego's</span><br>
-          <span class="prevent-select" id="subtitle-span">Journey</span><br>
+      <h1 id="title">Around the Globe</h1>
 
-          <div class="glowing-orbs">
-            <div class="orb blue-orb"></div>
-            <div class="orb purple-orb"></div>
-          </div>
+      <div class="map-wrapper">
+        <div class="glowing-orbs">
+          <div class="orb blue-orb"></div>
+          <div class="orb purple-orb"></div>
+          <div class="orb blue-orb top-orb"></div>
+          <div class="orb purple-orb top-orb"></div>
+        </div>
 
-        </div>
-        <div class="contact-button-wrapper">
-          <button class="contact-button" >
-            Contact me
-          </button>
-        </div>
+        <div id="map"></div>
       </div>
     </div>
+
+    <script>
+      window.addEventListener("load", () => loadMap());
+    </script>
   </body>
 </html>
