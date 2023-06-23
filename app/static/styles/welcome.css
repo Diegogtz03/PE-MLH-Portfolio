@@ -176,8 +176,19 @@ h1, h2, h3, h4, p {
 }
 
 @media (max-width: 500px) {
+  .welcome-text {
+    position: unset;
+  }
+  
+  .glowing-orbs {
+    top: unset;
+    bottom: unset;
+  }
+  
   .orb {
     width: 13rem;
     height: 13rem;
   }
+
+
 }
