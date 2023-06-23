@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:title" content="Personal Portfolio">
+    <meta property="og:description" content="My Personal Portfolio">
+    <link type="text/css" rel="stylesheet" href="../static/styles/travel.css">
+    <link type="text/css" rel="stylesheet" href="../static/styles/menu.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
+    <script src="../static/scripts/travel.js"></script>
+    <script src="../static/scripts/mapkick.js"></script>
+    <title>Travel</title>
+  </head>
+  <body>
+    <div class="noise-wrapper"></div>
+    <div class="wrapper">
+      <div class="menu-wrapper">
+        <a class="menu-button" href="/welcome">
+          <img src="../static/icons/home.svg" />
+        </a>
+        <a class="menu-button" href="/about">
+          <img src="../static/icons/about.svg" />
+        </a>
+        <a class="menu-button" href="/">
+          <img src="../static/icons/book.svg" />
+        </a>
+        <a class="menu-button" href="/">
+          <img src="../static/icons/flag.svg" />
+        </a>
+        <a class="menu-button" href="/travel">
+          <img src="../static/icons/location.svg" />
+        </a>
+        <a class="menu-button" href="https://linkedin.com" target="_blank">
+          <img src="../static/icons/linkedin.svg" />
+        </a>
+        <a class="menu-button" href="https://github.com" target="_blank">
+          <img src="../static/icons/github.svg" />
+        </a>
+      </div>
+
+      <h1 id="title">Around the Globe</h1>
+
+      <div class="map-wrapper">
+        <div class="glowing-orbs">
+          <div class="orb blue-orb"></div>
+          <div class="orb purple-orb"></div>
+          <div class="orb blue-orb top-orb"></div>
+          <div class="orb purple-orb top-orb"></div>
+        </div>
+
+        <div id="map"></div>
+      </div>
+    </div>
+
+    <script>
+      window.addEventListener("load", () => loadMap('{{ token }}'));
+    </script>
+  </body>
+</html>
