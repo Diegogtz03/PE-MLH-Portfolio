@@ -18,10 +18,7 @@ window.onload = () => {
   }, 3000);
 };
 
-function loadMap(token) {
-  // set the token given by Mapbox
-  mapboxgl.accessToken = token;
-
+function loadMap() {
   // Edit this list according to the places you visited
   const visitedPlaces = [
     {
@@ -51,8 +48,8 @@ function loadMap(token) {
   ]
   
   Mapkick.options = {
-    style:'mapbox://styles/mapbox/navigation-night-v1', 
-    zoom: 0.8, 
+    style:'../static/mapStyles/dark_theme.json', 
+    zoom: 0.9, 
     center: [0, 40],
     tooltips: {html: true, hover: false},
     markers: {color: "#f84d4d"},

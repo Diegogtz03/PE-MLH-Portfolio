@@ -8,8 +8,8 @@
     <link type="text/css" rel="stylesheet" href="../static/styles/travel.css">
     <link type="text/css" rel="stylesheet" href="../static/styles/menu.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <link href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css" rel="stylesheet" />
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css" rel="stylesheet" />
+    <script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
     <script src="../static/scripts/travel.js"></script>
     <script src="../static/scripts/mapkick.js"></script>
     <title>Travel</title>
@@ -56,7 +56,7 @@
     </div>
 
     <script>
-      window.addEventListener("load", () => loadMap('{{ token }}'));
+      window.addEventListener("load", () => loadMap());
     </script>
   </body>
 </html>
