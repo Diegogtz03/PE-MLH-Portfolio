@@ -88,6 +88,11 @@ p::after {
   animation: blinking-dot 1s linear infinite;
 }
 
+.text-promt {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
 @media screen and (max-width: 435px) {
   .monitor-screen {
     width: 69%;
