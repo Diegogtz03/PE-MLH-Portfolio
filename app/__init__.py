@@ -69,7 +69,7 @@ def experience():
 
 @app.route('/hobbies')
 def hobbies():
-    hobbies_1 = [
+    hobbies = [
         {
             "name": "Hiking",
             "image": "../static/img/logo.jpg"
@@ -78,8 +78,6 @@ def hobbies():
             "name": "Camping",
             "image": "../static/img/logo.jpg"
         },
-    ]
-    hobbies_2 = [
         {
             "name": "Kayaking",
             "image": "../static/img/logo.jpg"
@@ -89,4 +87,4 @@ def hobbies():
             "image": "../static/img/logo.jpg"
         }
     ]
-    return render_template('hobbies.html', hobbies_1 = hobbies_1 , hobbies_2 = hobbies_2)
+    return render_template('hobbies.html', hobbies = hobbies)
