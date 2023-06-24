@@ -6,7 +6,6 @@
     <meta property="og:title" content="Personal Portfolio">
     <meta property="og:description" content="My Personal Portfolio">
     <link type="text/css" rel="stylesheet" href="../static/styles/projects.css">
-    <link type="text/css" rel="stylesheet" href="../static/styles/menu.css">
     <title>My Projects</title>
   </head>
   <body>
@@ -15,29 +14,8 @@
       <div class="orb blue-orb"></div>
       <div class="orb purple-orb"></div>
     </div>
-    <div class="menu-wrapper">
-      <a class="menu-button" href="/welcome">
-        <img src="../static/icons/home.svg" />
-      </a>
-      <a class="menu-button" href="/about">
-        <img src="../static/icons/about.svg" />
-      </a>
-      <a class="menu-button" href="/">
-        <img src="../static/icons/book.svg" />
-      </a>
-      <a class="menu-button" href="/">
-        <img src="../static/icons/flag.svg" />
-      </a>
-      <a class="menu-button" href="/">
-        <img src="../static/icons/location.svg" />
-      </a>
-      <a class="menu-button" href="https://linkedin.com" target="_blank">
-        <img src="../static/icons/linkedin.svg" />
-      </a>
-      <a class="menu-button" href="https://github.com" target="_blank">
-        <img src="../static/icons/github.svg" />
-      </a>
-    </div>
+    {% import 'menu.html' as menu %}
+    {{ menu.menu() }}
     <article>
       <section class="projects-wrapper">
         <h1>Projects</h1>
@@ -63,10 +41,6 @@
         </div>
       </section>
     </article>
-    <div class="glowing-orbs-b">
-      <div class="orb-b blue-orb-b"></div>
-      <div class="orb-b purple-orb-b"></div>
-    </div>
   </body>
   <script src="../static/scripts/projects.js"></script>
 </html>
