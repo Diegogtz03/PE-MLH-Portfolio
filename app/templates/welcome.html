@@ -6,7 +6,7 @@
     <meta property="og:title" content="Personal Portfolio">
     <meta property="og:description" content="My Personal Portfolio">
     <link type="text/css" rel="stylesheet" href="../static/styles/welcome.css">
-    <script src="../static/scripts/welcome.js"></script>
+    <script defer src="../static/scripts/welcome.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <title>Welcome</title>
   </head>
@@ -29,7 +29,29 @@
 
         </div>
         <div class="contact-button-wrapper">
-          <button class="contact-button" >
+          <div class="buttons-wrapper">
+            <div class="contact-menu-button">
+              <a class="menu-button"id="mail-button" href="mailto:{{ email_address }}">
+                <img src="../static/icons/mail.svg" alt="Mail send icon">
+              </a>
+              <span class="mail-text hidden-text">
+                {{ email_address }}
+                <button onclick="copyToClipboard(`{{ email_address }}`)">
+                  <img src="../static/icons/copy.svg" alt="Copy icon">
+                </button>
+              </span>
+            </div>
+
+            <a class="menu-button contact-menu-button" href="https://github.com/{{ github_username }}" target="_blank">
+              <img src="../static/icons/github.svg" alt="Github logo" />
+            </a>
+
+            <a class="menu-button contact-menu-button" href="https://linkedin.com/in/{{ linkedin_username }}" target="_blank">
+              <img src="../static/icons/linkedin.svg" alt="Linkedin logo" />
+            </a>
+          </div>
+          
+          <button class="contact-button" onclick="showContactInfo()">
             Contact me
           </button>
         </div>
