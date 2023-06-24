@@ -43,64 +43,22 @@
         <h1>Projects</h1>
         <div class="projects-container">
           <ul>
+            {% for project in projects %}
             <li>
-              <img src="../static/projects/project1.jpg" class="open-modal" alt="" id="open-modal-1">
-              <h4>Project 1</h4>
+              <img src="{{ project.image }}" class="open-modal" alt="" id="open-modal-{{ project.id }}">
+              <h4>{{ project.title }}</h4>
             </li>
-            <dialog class="modal" id="modal-1">
-              <img src="../static/icons/close.svg" alt="close-btn" class="close-btn" id="close-modal-1">
+            <dialog class="modal" id="modal-{{ project.id }}">
+              <img src="../static/icons/close.svg" alt="close-btn" class="close-btn" id="close-modal-{{ project.id }}">
               <div class="modal-content">
-                <h2>Project 1</h2>
-                <img src="../static/projects/project1.jpg" alt="project1" class="modal-img">
+                <h2>{{ project.title }}</h2>
+                <img src="{{ project.image }}" alt="project1" class="modal-img">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem ipsum, nulla iusto quisquam sed doloribus sit recusandae accusantium molestias magni obcaecati, rem, sint consectetur. Consectetur amet nulla quam ea corrupti?
+                  {{ project.description }}
                 </p>
               </div>
             </dialog>
-            <li>
-              <img src="../static/projects/project1.jpg" class="open-modal" alt="" id="open-modal-2">
-              <h4>Project 1</h4>
-            </li>
-            <dialog class="modal" id="modal-2">
-              <img src="../static/icons/close.svg" alt="close-btn" class="close-btn" id="close-modal-2">
-              <div class="modal-content">
-                <h2>Project 1</h2>
-                <img src="../static/projects/project1.jpg" alt="project1" class="modal-img">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem ipsum, nulla iusto quisquam sed doloribus sit recusandae accusantium molestias magni obcaecati, rem, sint consectetur. Consectetur amet nulla quam ea corrupti?
-                </p>
-              </div>
-            </dialog>
-          </ul>
-          <ul>
-            <li>
-              <img src="../static/projects/project1.jpg" class="open-modal" alt="" id="open-modal-3">
-              <h4>Project 1</h4>
-            </li>
-            <dialog class="modal" id="modal-3">
-              <img src="../static/icons/close.svg" alt="close-btn" class="close-btn" id="close-modal-3">
-              <div class="modal-content">
-                <h2>Project 1</h2>
-                <img src="../static/projects/project1.jpg" alt="project1" class="modal-img">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem ipsum, nulla iusto quisquam sed doloribus sit recusandae accusantium molestias magni obcaecati, rem, sint consectetur. Consectetur amet nulla quam ea corrupti?
-                </p>
-              </div>
-            </dialog>
-            <li>
-              <img src="../static/projects/project1.jpg" class="open-modal" alt="" id="open-modal-4">
-              <h4>Project 1</h4>
-            </li>
-            <dialog class="modal" id="modal-4">
-              <img src="../static/icons/close.svg" alt="close-btn" class="close-btn" id="close-modal-4">
-              <div class="modal-content">
-                <h2>Project 1</h2>
-                <img src="../static/projects/project1.jpg" alt="project1" class="modal-img">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem ipsum, nulla iusto quisquam sed doloribus sit recusandae accusantium molestias magni obcaecati, rem, sint consectetur. Consectetur amet nulla quam ea corrupti?
-                </p>
-              </div>
-            </dialog>
+            {% endfor %}
           </ul>
         </div>
       </section>

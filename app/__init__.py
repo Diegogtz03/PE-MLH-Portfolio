@@ -23,7 +23,33 @@ def travel():
 
 @app.route('/projects')
 def projects():
-    return render_template('projects.html')
+    projects = [
+        {
+            "id": "1",
+            "title": "Project 1",
+            "image": "../static/img/logo.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros vitae nisl ultricies aliquam. Sed vitae eros vitae nisl ultricies aliquam.",
+        },
+        {
+            "id": "2",
+            "title": "Project 2",
+            "image": "../static/img/logo.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros vitae nisl ultricies aliquam. Sed vitae eros vitae nisl ultricies aliquam.",
+        },
+        {
+            "id": "3",
+            "title": "Project 3",
+            "image": "../static/img/logo.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros vitae nisl ultricies aliquam. Sed vitae eros vitae nisl ultricies aliquam.",
+        },
+        {
+            "id": "4",
+            "title": "Project 4",
+            "image": "../static/img/logo.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros vitae nisl ultricies aliquam. Sed vitae eros vitae nisl ultricies aliquam.",
+        }
+    ]
+    return render_template('projects.html', projects = projects)
 
 @app.route('/experience')
 def experience():
