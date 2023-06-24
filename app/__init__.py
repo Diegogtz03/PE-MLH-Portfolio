@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 load_dotenv()
 app = Flask(__name__)
 
-
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -24,12 +23,68 @@ def travel():
 
 @app.route('/projects')
 def projects():
-    return render_template('projects.html')
+    projects = [
+        {
+            "id": "1",
+            "title": "Project 1",
+            "image": "../static/img/logo.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros vitae nisl ultricies aliquam. Sed vitae eros vitae nisl ultricies aliquam.",
+        },
+        {
+            "id": "2",
+            "title": "Project 2",
+            "image": "../static/img/logo.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros vitae nisl ultricies aliquam. Sed vitae eros vitae nisl ultricies aliquam.",
+        },
+        {
+            "id": "3",
+            "title": "Project 3",
+            "image": "../static/img/logo.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros vitae nisl ultricies aliquam. Sed vitae eros vitae nisl ultricies aliquam.",
+        },
+        {
+            "id": "4",
+            "title": "Project 4",
+            "image": "../static/img/logo.jpg",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros vitae nisl ultricies aliquam. Sed vitae eros vitae nisl ultricies aliquam.",
+        }
+    ]
+    return render_template('projects.html', projects = projects)
 
 @app.route('/experience')
 def experience():
-    return render_template('experience.html')
+    experiences = [
+        {
+            "company_institution": "University of Lorem Ipsum",
+            "start_date": "May 2021",
+            "end_date": "May 2026",
+        },
+        {
+            "company_institution": "MLH PE Fellowship",
+            "start_date": "Jun 2023",
+            "end_date": "Sep 2023",
+        }
+    ]
+    return render_template('experience.html', experiences = experiences)
 
 @app.route('/hobbies')
 def hobbies():
-    return render_template('hobbies.html')
+    hobbies = [
+        {
+            "name": "Hiking",
+            "image": "../static/img/logo.jpg"
+        },
+        {
+            "name": "Camping",
+            "image": "../static/img/logo.jpg"
+        },
+        {
+            "name": "Kayaking",
+            "image": "../static/img/logo.jpg"
+        },
+        {
+            "name": "Biking",
+            "image": "../static/img/logo.jpg"
+        }
+    ]
+    return render_template('hobbies.html', hobbies = hobbies)

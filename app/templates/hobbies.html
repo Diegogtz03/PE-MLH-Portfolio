@@ -43,24 +43,12 @@
         <h1>Things I enjoy</h1>
         <div class="images-container">
           <ul>
+            {% for hobby in hobbies %}
             <li>
-              <img src="../static/img/logo.jpg" alt="">
-              <h4>Coding</h4>
+              <img src="{{ hobby.image }}" alt="">
+              <h4>{{ hobby.name }}</h4>
             </li>
-            <li>
-              <img src="../static/img/logo.jpg" alt="">
-              <h4>Coding</h4>
-            </li>
-          </ul>
-          <ul>
-            <li>
-              <img src="../static/img/logo.jpg" alt="">
-              <h4>Coding</h4>
-            </li>
-            <li>
-              <img src="../static/img/logo.jpg" alt="">
-              <h4>Coding</h4>
-            </li>
+            {% endfor %}
           </ul>
         </div>
       </section>
