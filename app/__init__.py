@@ -27,25 +27,25 @@ def projects():
         {
             "id": "1",
             "title": "Project 1",
-            "image": "../static/img/logo.jpg",
+            "image": "../static/projects/project1.jpg",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros vitae nisl ultricies aliquam. Sed vitae eros vitae nisl ultricies aliquam.",
         },
         {
             "id": "2",
             "title": "Project 2",
-            "image": "../static/img/logo.jpg",
+            "image": "../static/projects/project1.jpg",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros vitae nisl ultricies aliquam. Sed vitae eros vitae nisl ultricies aliquam.",
         },
         {
             "id": "3",
             "title": "Project 3",
-            "image": "../static/img/logo.jpg",
+            "image": "../static/projects/project1.jpg",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros vitae nisl ultricies aliquam. Sed vitae eros vitae nisl ultricies aliquam.",
         },
         {
             "id": "4",
             "title": "Project 4",
-            "image": "../static/img/logo.jpg",
+            "image": "../static/projects/project1.jpg",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros vitae nisl ultricies aliquam. Sed vitae eros vitae nisl ultricies aliquam.",
         }
     ]
