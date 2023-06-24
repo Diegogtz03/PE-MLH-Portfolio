@@ -5,7 +5,6 @@ from dotenv import load_dotenv
 load_dotenv()
 app = Flask(__name__)
 
-
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -32,4 +31,24 @@ def experience():
 
 @app.route('/hobbies')
 def hobbies():
-    return render_template('hobbies.html')
+    hobbies_1 = [
+        {
+            "name": "Hiking",
+            "image": "../static/img/logo.jpg"
+        },
+        {
+            "name": "Camping",
+            "image": "../static/img/logo.jpg"
+        },
+    ]
+    hobbies_2 = [
+        {
+            "name": "Kayaking",
+            "image": "../static/img/logo.jpg"
+        },
+        {
+            "name": "Biking",
+            "image": "../static/img/logo.jpg"
+        }
+    ]
+    return render_template('hobbies.html', hobbies_1 = hobbies_1 , hobbies_2 = hobbies_2)
