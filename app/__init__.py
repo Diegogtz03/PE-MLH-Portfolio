@@ -27,7 +27,19 @@ def projects():
 
 @app.route('/experience')
 def experience():
-    return render_template('experience.html')
+    experiences = [
+        {
+            "company_institution": "University of Lorem Ipsum",
+            "start_date": "May 2021",
+            "end_date": "May 2026",
+        },
+        {
+            "company_institution": "MLH PE Fellowship",
+            "start_date": "Jun 2023",
+            "end_date": "Sep 2023",
+        }
+    ]
+    return render_template('experience.html', experiences = experiences)
 
 @app.route('/hobbies')
 def hobbies():
