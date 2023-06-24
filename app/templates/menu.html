@@ -1,0 +1,40 @@
+{% macro menu() -%}
+  <link type="text/css" rel="stylesheet" href="../static/styles/menu.css">
+
+  <div class="menu-wrapper">
+    <!-- Welcome Page -->
+    <a class="menu-button" href="/welcome">
+      <img src="../static/icons/home.svg" />
+    </a>
+
+    <!-- About Me Page -->
+    <a class="menu-button" href="/about">
+      <img src="../static/icons/about.svg" />
+    </a>
+
+    <!-- Projects Page -->
+    <a class="menu-button" href="/projects">
+      <img src="../static/icons/book.svg" />
+    </a>
+
+    <!-- Experience Page -->
+    <a class="menu-button" href="/experience">
+      <img src="../static/icons/flag.svg" />
+    </a>
+
+    <!-- Travel Page -->
+    <a class="menu-button" href="/travel">
+      <img src="../static/icons/location.svg" />
+    </a>
+
+    <!-- Linkedin -->
+    <a class="menu-button" href="https://linkedin.com" target="_blank">
+      <img src="../static/icons/linkedin.svg" />
+    </a>
+
+    <!-- Github -->
+    <a class="menu-button" href="https://github.com" target="_blank">
+      <img src="../static/icons/github.svg" />
+    </a>
+  </div>
+{%- endmacro %}
