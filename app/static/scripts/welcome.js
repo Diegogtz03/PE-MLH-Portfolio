@@ -13,7 +13,7 @@ function showContactInfo() {
       $('.mail-text').addClass('shown-text');
       setTimeout(() => {
         $('.shown-text').css('width', `${mailTextWidth}px`);
-      }, 10);
+      }, 20);
       $('.contact-menu-button').css('column-gap', '5px');
     }, 800);
   } else {
