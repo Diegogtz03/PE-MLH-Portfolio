@@ -92,14 +92,19 @@ h1, h2, h3, h4, p {
   margin: 0;
 }
 
+.prevent-select {
+  user-select: none;
+}
+
 .contact-button-wrapper {
   position: absolute;
   bottom: 0;
   margin: 2rem;
+  width: 100%;
 }
 
 .contact-button {
-  background-color: transparent;
+  background-color: #1b1b1b;
   border: 4px solid rgba(255, 255, 255, 0.708);
   border-radius: 3rem;
   padding: 1rem 2rem;
@@ -107,10 +112,12 @@ h1, h2, h3, h4, p {
   color: rgba(255, 255, 255, 0.708);
   cursor: pointer;
   transition: all 0.5s;
+  z-index: 3;
+  position: relative;
 }
 
 .contact-button:hover {
-  background-color: rgba(255, 255, 255, 0.556);
+  background-color: rgb(212, 212, 212);
   animation: 1s linear .1s alternate button-glow;
   animation-direction: alternate;
   animation-iteration-count: infinite;
@@ -121,8 +128,80 @@ h1, h2, h3, h4, p {
   scale: 0.98;
 }
 
-.prevent-select {
-  user-select: none;
+.buttons-wrapper {
+  background-color: #272727;
+  border: 2px solid #535353;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+  border-radius: 3rem;
+  padding: 8px;
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 0;
+
+  z-index: 0;
+  scale: 0.5;
+
+  transition: all 1s;
+}
+
+.show-button-wrapper {
+  scale: 1;
+  top: -10rem;
+}
+
+.contact-menu-button {
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  background-color: black;
+  border-radius: 3rem;
+  width: auto;
+
+  transition: all 0.5s;
+
+  overflow: hidden;
+}
+
+.mail-text {
+  display: flex;
+  align-items: center;
+  column-gap: 2px;
+
+  transition: all 0.5s;
+}
+
+.mail-text button {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  cursor: pointer;
+}
+
+.mail-text button:hover {
+  filter:brightness(1.5);
+}
+
+.mail-text button:active {
+  scale: 0.99;
+}
+
+.hidden-text {
+  visibility: hidden;
+  width: 0px;
+}
+
+.shown-text {
+  visibility: shown;
+  width: 0px;
 }
 
 @keyframes blue-orb-movement {

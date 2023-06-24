@@ -11,7 +11,7 @@ def index():
 
 @app.route('/welcome')
 def welcome():
-    return render_template('welcome.html')
+    return render_template('welcome.html', email_address='example@gmail.com', github_username = '', linkedin_username = '')
 
 @app.route('/about')
 def about():
@@ -19,7 +19,7 @@ def about():
 
 @app.route('/travel')
 def travel():
-    return render_template('travel.html', token = os.environ.get('MAPBOX_TOKEN'))
+    return render_template('travel.html')
 
 @app.route('/projects')
 def projects():
