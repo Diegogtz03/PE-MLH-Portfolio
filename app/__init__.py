@@ -72,19 +72,19 @@ def hobbies():
     hobbies = [
         {
             "name": "Hiking",
-            "image": "../static/img/logo.jpg"
+            "image": "../static/hobbies/hiking.png"
         },
         {
             "name": "Camping",
-            "image": "../static/img/logo.jpg"
+            "image": "../static/hobbies/camping.png"
         },
         {
             "name": "Kayaking",
-            "image": "../static/img/logo.jpg"
+            "image": "../static/hobbies/kayaking.png"
         },
         {
             "name": "Biking",
-            "image": "../static/img/logo.jpg"
+            "image": "../static/hobbies/biking.png"
         }
     ]
     return render_template('hobbies.html', hobbies = hobbies)
