@@ -256,6 +256,10 @@ h1, h2, h3, h4, p {
 }
 
 @media (max-width: 500px) {
+  body {
+    overflow: scroll;
+  }
+
   .welcome-text {
     position: unset;
   }
