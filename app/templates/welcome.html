@@ -6,8 +6,9 @@
     <meta property="og:title" content="Personal Portfolio">
     <meta property="og:description" content="My Personal Portfolio">
     <link type="text/css" rel="stylesheet" href="../static/styles/welcome.css">
-    <script defer src="../static/scripts/welcome.js"></script>
+    <script src="https://unpkg.com/clipboard@2/dist/clipboard.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../static/scripts/welcome.js"></script>
     <title>Welcome</title>
   </head>
   <body>
@@ -36,7 +37,7 @@
               </a>
               <span class="mail-text hidden-text">
                 {{ email_address }}
-                <button onclick="copyToClipboard(`{{ email_address }}`)">
+                <button class="copy-btn" data-clipboard-text='{{ email_address }}'>
                   <img src="../static/icons/copy.svg" alt="Copy icon">
                 </button>
               </span>
