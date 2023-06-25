@@ -18,57 +18,84 @@ let animationStared = false;
 // time in ms to wait before writing next character
 const minTime = 50;
 const maxTime = 150;
+let startX, startY;
 
 window.onload = () => {
+  if (window.innerWidth < 768) {
+    $('.loading-text.text-promt').html('Tap to continue');
+  }
+
   document.body.onkeyup = async function(e) {
     if ((e.key == " " || e.code == "Space") && !animationStared) {
-      animationStared = true;
-      $('.text-promt').css('opacity', 0);
-
-      // Start playing computer startup noise
-      const startUpData = await playStartUp();
-
-      setTimeout(async () => {
-        // remove loading text and show writing text
-        $('.loading-text').remove();
-        $('.monitor-writing-text').removeClass('hidden');
-        
-        // Start playing keyboard typing noise
-        const keyboardData = await playKeyboard();
-    
-        // Iterate over each character of the text to write and add it to the current text
-        for (var i = 0; i < textToWrite.length; i++) {
-          // check for new lines
-          if (textToWrite[i] === '\n') {
-            currentText += '<br>';
-          }
-    
-          currentText += textToWrite[i];
-    
-          // set the current text to the monitor
-          $('.monitor-writing-text').html(currentText);
-    
-          // await a random time before writing the next character
-          await new Promise(r => setTimeout(r, Math.floor(Math.random() * (maxTime - minTime + 1) + minTime)));
-        }
-
-        // Start exit sound effect
-        setTimeout(() => {
-          const fadeOutData = playFadeOutSound();
-        }, 500);
-
-
-        setTimeout(() => {
-          // stop the sound effects
-          startUpData.gainsource.gain.linearRampToValueAtTime(0.01, startUpData.context.currentTime + 3);
-          keyboardData.gainsource.gain.linearRampToValueAtTime(0.01, keyboardData.context.currentTime + 3);
-        }, 1000);
-    
-        transitionOut();
-      }, 3000);
+      exectuteTransition();
     }
   }
+
+
+  // Phone on click event
+  window.addEventListener('touchstart', function(event) {
+    startX = event.touches[0].clientX;
+    startY = event.touches[0].clientY;
+  });
+
+  window.addEventListener('touchend', function(event) {
+    const endX = event.changedTouches[0].clientX;
+    const endY = event.changedTouches[0].clientY;
+
+    const diffX = Math.abs(startX - endX);
+    const diffY = Math.abs(startY - endY);
+
+    if (diffX < 10 && diffY < 10 && !animationStared) {
+      exectuteTransition();
+    }
+  });
 };
+
+
+
+async function exectuteTransition() {
+  animationStared = true;
+  $('.text-promt').css('opacity', 0);
+
+  // Start playing computer startup noise
+  const startUpData = await playStartUp();
+
+  setTimeout(async () => {
+    // remove loading text and show writing text
+    $('.loading-text').remove();
+    $('.monitor-writing-text').removeClass('hidden');
+    
+    // Start playing keyboard typing noise
+    const keyboardData = await playKeyboard();
+
+    // Iterate over each character of the text to write and add it to the current text
+    for (var i = 0; i < textToWrite.length; i++) {
+      // check for new lines
+      if (textToWrite[i] === '\n') {
+        currentText += '<br>';
+      }
+
+      currentText += textToWrite[i];
+
+      // set the current text to the monitor
+      $('.monitor-writing-text').html(currentText);
+
+      // await a random time before writing the next character
+      await new Promise(r => setTimeout(r, Math.floor(Math.random() * (maxTime - minTime + 1) + minTime)));
+    }
+
+    // Start exit sound effect
+    setTimeout(() => {
+      playFadeOutSound();
+      // stop the sound effects
+      startUpData.sound.fade(0.7, 0, 1000, startUpData.id1);
+      keyboardData.sound.fade(0.9, 0, 1000, keyboardData.id1);
+    }, 500);
+
+    transitionOut();
+  }, 3000);
+}
+
 
 function transitionOut() {
   // transition the whole page out
@@ -84,93 +111,48 @@ function transitionOut() {
   }, 4500);
 }
 
-
 async function playStartUp() {
-  // Start background computer noise
-  const audioContext = new AudioContext();
-
   const audioURL = '../static/sounds/computer_startup.mp3';
 
-  try {
-    const response = await fetch(audioURL);
-    const arrayBuffer = await response.arrayBuffer();
-    const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+  var sound = new Howl({
+    src: [audioURL],
+    loop: true,
+    volume: 0.7
+  });
+  
+  var id1 = sound.play();
 
-    const source = audioContext.createBufferSource();
-    source.buffer = audioBuffer;
-    const gainSource = audioContext.createGain();
-    gainSource.gain.value = 0.7;
-    gainSource.connect(audioContext.destination);
-    source.connect(gainSource);
-    source.loop = true;
-    source.start(0);
-
-    return {
-      context: audioContext,
-      gainsource: gainSource
-    };
-  } catch (error) {
-    console.error('Error loading audio:', error);
-    return null;
+  return {
+    sound: sound,
+    id1: id1
   }
 }
 
 async function playKeyboard() {
-  // Start keyboard typing noise
-  const audioContext = new AudioContext();
-
   const audioURL = '../static/sounds/keyboard_typing.mp3';
 
-  try {
-    const response = await fetch(audioURL);
-    const arrayBuffer = await response.arrayBuffer();
-    const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+  var sound = new Howl({
+    src: [audioURL],
+    loop: true,
+    volume: 0.9
+  });
+  
+  var id1 = sound.play();
 
-    const source = audioContext.createBufferSource();
-    source.buffer = audioBuffer;
-    const gainSource = audioContext.createGain();
-    gainSource.gain.value = 0.7;
-    gainSource.connect(audioContext.destination);
-    source.connect(gainSource);
-    source.loop = true;
-    source.start(0);
-
-    return {
-      context: audioContext,
-      gainsource: gainSource
-    };
-  } catch (error) {
-    console.error('Error loading audio:', error);
-    return null;
+  return {
+    sound: sound,
+    id1: id1
   }
 }
 
 
 async function playFadeOutSound() {
-  // Start keyboard typing noise
-  const audioContext = new AudioContext();
-
   const audioURL = '../static/sounds/fadeout_sound.mp3';
 
-  try {
-    const response = await fetch(audioURL);
-    const arrayBuffer = await response.arrayBuffer();
-    const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
-
-    const source = audioContext.createBufferSource();
-    source.buffer = audioBuffer;
-    const gainSource = audioContext.createGain();
-    gainSource.gain.value = 1;
-    gainSource.connect(audioContext.destination);
-    source.connect(gainSource);
-    source.start(0);
-
-    return {
-      context: audioContext,
-      gainsource: gainSource
-    };
-  } catch (error) {
-    console.error('Error loading audio:', error);
-    return null;
-  }
+  var sound = new Howl({
+    src: [audioURL],
+    volume: 1.1
+  });
+  
+  sound.play();
 }
